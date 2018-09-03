@@ -1,0 +1,9 @@
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\bin\Debug\POS_DataAccessLayer.dll
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\bin\Debug\POS_DataAccessLayer.pdb
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\bin\Debug\log4net.dll
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\bin\Debug\log4net.xml
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\obj\Debug\POS_DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\obj\Debug\POS_DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\obj\Debug\POS_DataAccessLayer.csproj.CopyComplete
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\obj\Debug\POS_DataAccessLayer.dll
+C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_DataAccessLayer\obj\Debug\POS_DataAccessLayer.pdb
