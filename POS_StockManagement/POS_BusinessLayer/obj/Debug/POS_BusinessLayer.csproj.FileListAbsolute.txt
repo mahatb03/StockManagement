@@ -9,3 +9,16 @@ C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_BusinessLa
 C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.pdb
 C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_DataAccessLayer.dll
 C:\Users\Barnali\Desktop\Projects\POS_Project\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_DataAccessLayer.pdb
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_BusinessLayer.dll
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_BusinessLayer.pdb
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\log4net.dll
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_DataAccessLayer.dll
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_UtilityLayer.dll
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_DataAccessLayer.pdb
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\POS_UtilityLayer.pdb
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\bin\Debug\log4net.xml
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.csproj.CopyComplete
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.dll
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_BusinessLayer\obj\Debug\POS_BusinessLayer.pdb

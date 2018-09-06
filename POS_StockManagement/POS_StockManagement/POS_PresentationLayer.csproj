@@ -151,10 +151,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\StockManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\NewItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,13 +195,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
-    <Content Include="Views\Home\InvalidCredential.cshtml" />
+    <Content Include="Views\Login\InvalidCredential.cshtml" />
+    <Content Include="Views\Shared\_StockManageLayoutPage.cshtml" />
+    <Content Include="Views\Home\StockManage.cshtml" />
+    <Content Include="Views\StockManage\AddItem.cshtml" />
+    <Content Include="Views\StockManage\AddItemSucess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Login\" />
+    <Folder Include="Views\AddItem\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

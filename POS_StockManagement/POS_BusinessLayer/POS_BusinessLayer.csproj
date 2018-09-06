@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStock.cs" />
+    <Compile Include="ItemDetails.cs" />
     <Compile Include="Validateuser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\POS_DataAccessLayer\POS_DataAccessLayer.csproj">
       <Project>{f8fdad21-1fce-4ea1-bc35-ea8b438f953c}</Project>
       <Name>POS_DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS_UtilityLayer\POS_UtilityLayer.csproj">
+      <Project>{f64bc6c5-17b3-438d-89db-b53d6ff45c71}</Project>
+      <Name>POS_UtilityLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
