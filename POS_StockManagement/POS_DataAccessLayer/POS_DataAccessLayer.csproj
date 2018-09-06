@@ -45,11 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddItem.cs" />
+    <Compile Include="FetchItemDetails.cs" />
     <Compile Include="FetchUserDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS_UtilityLayer\POS_UtilityLayer.csproj">
+      <Project>{f64bc6c5-17b3-438d-89db-b53d6ff45c71}</Project>
+      <Name>POS_UtilityLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

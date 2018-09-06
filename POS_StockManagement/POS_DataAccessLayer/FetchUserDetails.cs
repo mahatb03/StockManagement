@@ -31,7 +31,9 @@ namespace POS_DataAccessLayer
 
                 con.Open();
                 int ReturnCode = (int)cmd.ExecuteScalar();
+                con.Close();
                 return ReturnCode == 1;
+                
             }
 
             catch(Exception ex)
