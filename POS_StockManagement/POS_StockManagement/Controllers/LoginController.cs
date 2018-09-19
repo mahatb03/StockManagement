@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using POS_StockManagement.Models;
 using POS_BusinessLayer;
 using System.Web.Security;
+using POS_UtilityLayer;
 
 namespace POS_StockManagement.Controllers
 {
@@ -24,18 +25,14 @@ namespace POS_StockManagement.Controllers
 
             catch(Exception ex)
             {
-                throw ex;
+                Log.Error(ex.ToString());
+                throw;
             }
         }
 
 
        
        
-        public ActionResult InvalidCredential()
-        {
-            return View();
-        }
-
         //POST: Login
 
         [HttpPost]
@@ -49,19 +46,23 @@ namespace POS_StockManagement.Controllers
 
                 if (flag == true)
                 {
+                    Log.Info("Login-page started...");
                     FormsAuthentication.RedirectFromLoginPage(empmodel.UserName, true);
                     return RedirectToAction("Welcome","Home");
                 }
 
                 else
                 {
-                    return RedirectToAction("InvalidCredential");
+                    Log.Info("Invalid Credentials..");
+                    ViewBag.Message = "Username or Password does not match";
+                    return View();
                 }
             }
 
             catch(Exception ex)
             {
-                throw ex;
+                Log.Error(ex.ToString());
+                throw;
             }
 
         }

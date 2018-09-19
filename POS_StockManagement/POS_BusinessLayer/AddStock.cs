@@ -4,15 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using POS_DataAccessLayer;
+using POS_UtilityLayer;
 
 namespace POS_BusinessLayer
 {
     public class AddStock
     {
-        public bool addItems(string productId, decimal price, string color, string brand, string category, int size, DateTime dateofentry)
+        public bool addItems(AddItemModel itm)
         {
-            AddItem add = new AddItem();
-            return add.addItem(productId, price, color, brand, category, size, dateofentry);
+            try
+            {
+                AddItem add = new AddItem();
+                return add.addItem(itm);
+            }
+
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                throw;
+            }
         }
     }
 }

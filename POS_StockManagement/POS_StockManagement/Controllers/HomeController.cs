@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using log4net;
+using POS_UtilityLayer;
 
 namespace POS_StockManagement.Controllers
 {
@@ -12,14 +14,33 @@ namespace POS_StockManagement.Controllers
         [Authorize]
         public ActionResult Welcome()
         {
-            return View();
+            try
+            {
+                return View();
+            }            
+
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                throw;
+            }
         }
 
 
         
         public ActionResult  StockManage()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                throw;
+            }
+
         }
 
 

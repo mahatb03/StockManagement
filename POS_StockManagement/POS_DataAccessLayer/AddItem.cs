@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_UtilityLayer;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -8,42 +9,53 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace POS_DataAccessLayer
 {
    public class AddItem
     {
-        public bool addItem(string productId , decimal price, string color, string brand, string category, int size, DateTime dateofentry)
+        public bool addItem(AddItemModel model)
         {
-            string constr = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("spAddItem", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@ProductId", productId);
-            cmd.Parameters.AddWithValue("@Price", price);
-            cmd.Parameters.AddWithValue("@Color", color);
-            cmd.Parameters.AddWithValue("@Brand", brand);
-            cmd.Parameters.AddWithValue("@Category", category);
-            cmd.Parameters.AddWithValue("@Size", size);
-            cmd.Parameters.AddWithValue("@DateofEntry", dateofentry);
-            
-            
-
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
-
-            if(i >=1)
+            try
             {
-                return true;
+                string constr = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
+                SqlConnection con = new SqlConnection(constr);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("spAddItem", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ProductId", model.ProductID);
+                cmd.Parameters.AddWithValue("@Price", model.Price);
+                cmd.Parameters.AddWithValue("@Color", model.Color_ID);
+                cmd.Parameters.AddWithValue("@Brand", model.Brand_ID);
+                cmd.Parameters.AddWithValue("@Category", model.Category_ID);
+                cmd.Parameters.AddWithValue("@Size", model.Size_ID);
+                cmd.Parameters.AddWithValue("@DateofEntry", model.DateOfEntry);
+
+
+
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+
+                if (i >= 1)
+                {
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
             }
 
-            else
+            catch (Exception ex)
             {
-                return false;
+                Log.Error(ex.ToString());
+                throw;
             }
 
         }
+            
     }
 }

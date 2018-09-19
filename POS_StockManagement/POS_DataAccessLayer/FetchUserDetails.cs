@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using POS_UtilityLayer;
 
 namespace POS_DataAccessLayer
 {
@@ -36,9 +37,10 @@ namespace POS_DataAccessLayer
                 
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw ex;
+                Log.Error(ex.ToString());
+                throw;
             }
 
         }
