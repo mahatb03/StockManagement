@@ -67,11 +67,13 @@
                     COLOR
                 </td>
                 <td>
-                    @Html.DropDownListFor(m => m.Color,(IEnumerable<SelectListItem>)ViewBag.Color  , "Select Color")                      
-                    
+
+
+                    @Html.DropDownListFor(m => m.Color_ID, Model.Color, "Select Color")
+
                 </td>
                 <td>
-                    @Html.ValidationMessageFor(m => m.Color, "", new { @class = "error" })
+                    @Html.ValidationMessageFor(m => m.Color_ID, "", new { @class = "error" })
                 </td>
             </tr>
             <tr>
@@ -88,10 +90,10 @@
                     BRAND
                 </td>
                 <td>
-                    @Html.DropDownListFor(m => m.Brand,(IEnumerable<SelectListItem>)ViewBag.Brand,"Select Brand")
+                    @Html.DropDownListFor(m => m.Brand_ID, Model.Brand, "Select Brand")
                 </td>
                 <td>
-                    @Html.ValidationMessageFor(m => m.Brand, "", new { @class = "error" })
+                    @Html.ValidationMessageFor(m => m.Brand_ID, "", new { @class = "error" })
                 </td>
             </tr>
             <tr>
@@ -99,19 +101,19 @@
                     CATEGORY
                 </td>
                 <td>
-                    @Html.DropDownListFor(m => m.Category, (IEnumerable<SelectListItem>)ViewBag.Category, "Select Category")
+                    @Html.DropDownListFor(m => m.Category_ID, Model.Category, "Select Category")
                 </td>
                 <td>
-                    @Html.ValidationMessageFor(m => m.Category, "", new { @class = "error" })
+                    @Html.ValidationMessageFor(m => m.Category_ID, "", new { @class = "error" })
                 </td>
                 <td>
                     SIZE
                 </td>
                 <td>
-                    @Html.DropDownListFor(m => m.Size, (IEnumerable<SelectListItem>)ViewBag.Size, "Select Size")
+                    @Html.DropDownListFor(m => m.Size_ID, Model.Size, "Select Size")
                 </td>
                 <td>
-                    @Html.ValidationMessageFor(m => m.Size, "", new { @class = "error" })
+                    @Html.ValidationMessageFor(m => m.Size_ID, "", new { @class = "error" })
                 </td>
             </tr>
             <tr>
@@ -119,19 +121,15 @@
                     DATE OF ENTRY
                 </td>
                 <td>
-                    @Html.TextBoxFor(m => m.DateOfEntry , "{0:yyyy-MM-dd}")
+                    @Html.TextBoxFor(m => m.DateOfEntry, "{0:yyyy-MM-dd}")
                 </td>
                 <td>
                     @*@Html.ValidationMessageFor(m => m.Category, "", new { @class = "error" })*@
                 </td>
+                <td></td>
+                <td></td>
                 <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    <input type="submit" name ="submit" value="ADD ITEM" />
+                    <input type="submit" name="submit" value="ADD ITEM" />
                 </td>
             </tr>
         </table>
@@ -140,6 +138,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 
+   
 </body>
 </html>
 

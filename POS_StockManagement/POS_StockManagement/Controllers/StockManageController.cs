@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using POS_BusinessLayer;
 using POS_StockManagement.Models;
 using POS_UtilityLayer;
+using POS_StockManagement.Repository;
+using POS_DataAccessLayer;
 
 namespace POS_StockManagement.Controllers
 {
@@ -15,52 +17,53 @@ namespace POS_StockManagement.Controllers
         
         public ActionResult AddItem()
         {
-            NewItem model = new NewItem();
-            model.DateOfEntry = DateTime.Today;
-            ItemDetails itm = new ItemDetails();
-
-            DataTable dtc = itm.fetchcolor();
-            DataTable dtb = itm.fetchbrand();
-            DataTable dtca = itm.fetchcategory();
-            DataTable dts = itm.fetchsize();
-
-            ViewBag.Color = ToSelectList(dtc,"Color", "ID");
-            ViewBag.Brand = ToSelectList(dtb,  "Brand", "ID");
-            ViewBag.Category = ToSelectList(dtca,  "Category", "ID");
-            ViewBag.Size = ToSelectList(dts, "Size", "ID");
-            
-            return View(model);
-        }
-
-        public SelectList ToSelectList(DataTable table,  string textField, string valueField)
-        {
-            List<SelectListItem> list = new List<SelectListItem>();
-
-            foreach (DataRow row in table.Rows)
+            try
             {
-                list.Add(new SelectListItem()
-                {
-                    Text = row[textField].ToString(),
-                    Value = row[valueField].ToString()
-                });
+                NewItem model = new NewItem();
+                model.DateOfEntry = DateTime.Today;
+
+                Dropdownlist item = new Dropdownlist();
+                var tuple = item.InitModel();
+
+                model.Size = tuple.Item1;
+                model.Color = tuple.Item2;
+                model.Category = tuple.Item3;
+                model.Brand = tuple.Item4;
+                
+                return View(model);
+
             }
 
-            return new SelectList(list, "Value", "Text");
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                throw;
+            }
         }
+
+      
 
         [HttpPost]
-        public ActionResult AddItem(string submit, NewItem itm)
+        public ActionResult AddItem(string submit,  AddItemModel itm)
         {
-            
-            AddStock stock = new AddStock();
-            bool flag = stock.addItems(itm.ProductID, itm.Price, itm.Color, itm.Brand, itm.Category, itm.Size, itm.DateOfEntry);
-
-            if (flag == true)
+            try
             {
-                ViewBag.Message = "Item added successfully";
+                AddStock stock = new AddStock();
+                bool flag = stock.addItems(itm);
+
+                if (flag == true)
+                {
+                    ViewBag.Message = "Item added successfully";
+                }
+
+                return View("AddItemSucess");
             }
 
-            return View("AddItemSucess");
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                throw;
+            }
         }
     }
 }

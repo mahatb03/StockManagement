@@ -47,17 +47,17 @@
 </head>
 <body>
     @*@using (Html.BeginForm("Index", "Home", FormMethod.Post))
-    {*@
+        {*@
     <form method="post">
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <th colspan="3">
-                   PLEASE LOGIN TO PROCEED
+                    PLEASE LOGIN TO PROCEED
                 </th>
             </tr>
             <tr>
                 <td>
-                   USERNAME
+                    USERNAME
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.UserName)
@@ -92,5 +92,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 
-    </body>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+
+</body>
 </html>
