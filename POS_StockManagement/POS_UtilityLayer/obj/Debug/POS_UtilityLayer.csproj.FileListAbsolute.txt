@@ -17,3 +17,4 @@ C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_UtilityLayer\obj\D
 C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_UtilityLayer\obj\Debug\POS_UtilityLayer.csproj.CopyComplete
 C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_UtilityLayer\obj\Debug\POS_UtilityLayer.dll
 C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_UtilityLayer\obj\Debug\POS_UtilityLayer.pdb
+C:\Users\Barnali\Desktop\Projects_New\POS_StockManagement\POS_UtilityLayer\obj\Debug\POS_UtilityLayer.csprojAssemblyReference.cache

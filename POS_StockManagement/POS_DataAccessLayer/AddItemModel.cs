@@ -17,11 +17,11 @@ namespace POS_DataAccessLayer
             [Required(ErrorMessage = "Please fill Price")]
             public decimal Price { get; set; }
             [Required(ErrorMessage = "Please fill Color")]
-            public string Color_ID { get; set; }
+            public int Color_ID { get; set; }
             [Required(ErrorMessage = "Please fill Brand")]
-            public string Brand_ID { get; set; }
+            public int Brand_ID { get; set; }
             [Required(ErrorMessage = "Please fill Category")]
-            public string Category_ID { get; set; }
+            public int Category_ID { get; set; }
             [Required(ErrorMessage = "Please fill Size")]
             public int Size_ID { get; set; }
             [Required(ErrorMessage = "Please fill DateofEntry")]

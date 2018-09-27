@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace POS_DataAccessLayer
 {
-   public class AddItem
+   public class AddItem : IAddItem
     {
         public bool addItem(AddItemModel model)
         {

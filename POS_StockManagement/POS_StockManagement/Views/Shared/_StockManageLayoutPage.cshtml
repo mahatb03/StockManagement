@@ -7,6 +7,10 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    <script src="~/JqueryDatatable/jquery.js"></script>
+    <link href="~/JqueryDatatable/CSSFiles/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/JqueryDatatable/jquery.dataTables.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +28,8 @@
                     <li>@Html.ActionLink("ADD ITEM", "AddItem", "StockManage")</li>
                     <li>@Html.ActionLink("UPDATE ITEM", "About", "Home")</li>
                     <li>@Html.ActionLink("DELETE ITEM", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("STOCK REPORT", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("STOCK REPORT", "AddItemView", "StockReport")</li>
+                    <li>@Html.ActionLink("STOCK REPORT", "AddItemView", "StockReport")</li>
                 </ul>
             </div>
         </div>
