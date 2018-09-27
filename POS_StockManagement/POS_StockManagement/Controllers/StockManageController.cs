@@ -9,6 +9,7 @@ using POS_StockManagement.Models;
 using POS_UtilityLayer;
 using POS_StockManagement.Repository;
 using POS_DataAccessLayer;
+using Unity;
 
 namespace POS_StockManagement.Controllers
 {
@@ -48,15 +49,22 @@ namespace POS_StockManagement.Controllers
         {
             try
             {
-                AddStock stock = new AddStock();
-                bool flag = stock.addItems(itm);
+                UnityContainer UC = new UnityContainer();
+                UC.RegisterType<AddStock>();
+                UC.RegisterType<AddItem>();
+
+                UC.RegisterType<IAddItem, AddItem>();
+
+                AddStock addstocks = UC.Resolve<AddStock>();
+
+                bool flag = addstocks.addItems(itm);
 
                 if (flag == true)
                 {
                     ViewBag.Message = "Item added successfully";
                 }
 
-                return View("AddItemSucess");
+                return RedirectToAction("AddItemView", "StockReport");
             }
 
             catch (Exception ex)
@@ -64,6 +72,7 @@ namespace POS_StockManagement.Controllers
                 Log.Error(ex.ToString());
                 throw;
             }
-        }
+        }       
+       
     }
 }

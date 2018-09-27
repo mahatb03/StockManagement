@@ -7,6 +7,8 @@ using POS_StockManagement.Models;
 using POS_BusinessLayer;
 using System.Web.Security;
 using POS_UtilityLayer;
+using Unity;
+using POS_DataAccessLayer;
 
 namespace POS_StockManagement.Controllers
 {
@@ -41,8 +43,15 @@ namespace POS_StockManagement.Controllers
         {
             try
             {
-                Validateuser newuser = new Validateuser();
-                bool flag = newuser.validate(empmodel.UserName, empmodel.Password);
+                UnityContainer UC = new UnityContainer();
+                UC.RegisterType<Validateuser>();
+                UC.RegisterType<UserDetails>();
+
+                UC.RegisterType<IUserDetails, UserDetails>();
+
+                Validateuser detail = UC.Resolve<Validateuser>();
+
+                bool flag = detail.validate(empmodel.UserName , empmodel.Password);
 
                 if (flag == true)
                 {

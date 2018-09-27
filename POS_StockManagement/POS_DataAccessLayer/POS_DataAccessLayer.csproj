@@ -73,7 +73,12 @@
   <ItemGroup>
     <Compile Include="AddItem.cs" />
     <Compile Include="AddItemModel.cs" />
-    <Compile Include="FetchUserDetails.cs" />
+    <Compile Include="IAddItem.cs" />
+    <Compile Include="IGetItem.cs" />
+    <Compile Include="IUserDetails.cs" />
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="GetItem.cs" />
+    <Compile Include="GetItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ using POS_UtilityLayer;
 
 namespace POS_DataAccessLayer
 {
-    public class UserDetails
+    public class UserDetails : IUserDetails
     {
 
         public bool ValidateUsers(string username, string password)

@@ -10,12 +10,17 @@ namespace POS_BusinessLayer
 {
     public class AddStock
     {
+        private IAddItem _additems;
+        public AddStock(IAddItem additems)
+        {
+            _additems = additems;
+        }
         public bool addItems(AddItemModel itm)
         {
             try
             {
-                AddItem add = new AddItem();
-                return add.addItem(itm);
+                
+                return _additems.addItem(itm);
             }
 
             catch (Exception ex)

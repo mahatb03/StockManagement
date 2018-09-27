@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
     </Reference>
@@ -53,6 +56,9 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -102,6 +108,27 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -150,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\StockManageController.cs" />
+    <Compile Include="Controllers\StockReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,11 +194,54 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.bootstrap.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.bootstrap.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.bootstrap4.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.bootstrap4.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.foundation.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.foundation.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.jqueryui.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.jqueryui.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.material.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.material.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.semanticui.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.semanticui.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.uikit.css" />
+    <Content Include="JqueryDatatable\CSSFiles\dataTables.uikit.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\jquery.dataTables.css" />
+    <Content Include="JqueryDatatable\CSSFiles\jquery.dataTables.min.css" />
+    <Content Include="JqueryDatatable\CSSFiles\jquery.dataTables_themeroller.css" />
+    <Content Include="JqueryDatatable\dataTables.bootstrap.js" />
+    <Content Include="JqueryDatatable\dataTables.bootstrap.min.js" />
+    <Content Include="JqueryDatatable\dataTables.bootstrap4.js" />
+    <Content Include="JqueryDatatable\dataTables.bootstrap4.min.js" />
+    <Content Include="JqueryDatatable\dataTables.dataTables.js" />
+    <Content Include="JqueryDatatable\dataTables.dataTables.min.js" />
+    <Content Include="JqueryDatatable\dataTables.foundation.js" />
+    <Content Include="JqueryDatatable\dataTables.foundation.min.js" />
+    <Content Include="JqueryDatatable\dataTables.jqueryui.js" />
+    <Content Include="JqueryDatatable\dataTables.jqueryui.min.js" />
+    <Content Include="JqueryDatatable\dataTables.material.js" />
+    <Content Include="JqueryDatatable\dataTables.material.min.js" />
+    <Content Include="JqueryDatatable\dataTables.semanticui.js" />
+    <Content Include="JqueryDatatable\dataTables.semanticui.min.js" />
+    <Content Include="JqueryDatatable\dataTables.uikit.js" />
+    <Content Include="JqueryDatatable\dataTables.uikit.min.js" />
+    <Content Include="JqueryDatatable\images\favicon.ico" />
+    <Content Include="JqueryDatatable\images\sort_asc.png" />
+    <Content Include="JqueryDatatable\images\sort_asc_disabled.png" />
+    <Content Include="JqueryDatatable\images\sort_both.png" />
+    <Content Include="JqueryDatatable\images\sort_desc.png" />
+    <Content Include="JqueryDatatable\images\sort_desc_disabled.png" />
+    <Content Include="JqueryDatatable\jquery.dataTables.js" />
+    <Content Include="JqueryDatatable\jquery.dataTables.min.js" />
+    <Content Include="JqueryDatatable\jquery.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="JqueryDatatable\images\Sorting icons.psd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -201,6 +272,7 @@
     <Content Include="Views\Home\StockManage.cshtml" />
     <Content Include="Views\StockManage\AddItem.cshtml" />
     <Content Include="Views\StockManage\AddItemSucess.cshtml" />
+    <Content Include="Views\StockReport\AddItemView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

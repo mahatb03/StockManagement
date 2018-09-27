@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddStock.cs" />
+    <Compile Include="GetItemList.cs" />
     <Compile Include="Validateuser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
